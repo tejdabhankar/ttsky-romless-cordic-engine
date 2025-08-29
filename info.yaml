@@ -39,7 +39,7 @@ pinout:
 
   # Outputs
   uo[0]: "uo_out[0]"
-  uo[1]: ""
+  uo[1]: "uo_out[1]"
   uo[2]: ""
   uo[3]: ""
   uo[4]: ""

@@ -19,28 +19,27 @@ The aformentioned CORDIC core accepts the input angle $\theta$ in radian format,
 
 ### Basic Functionality of CORDIC CORE
 
-The CORDIC core computes trigonometric functions by rotating a vector iteratively by breaking down the angle of rotation into a set of small pre-defined angles. If a two-dimensional vector $ v_0=[x_0,y_0] $ is rotated by an angle $ \theta $ then it results a vector $ v_L=[x_L,y_L] $. The rotation angle $ \theta $ is expressed as a series of $ L $ micro-rotation angles $ \alpha_i = \arctan(2^{-i})$ as shown below.
-$$ \theta = \sum_{i=0}^{L-1}\sigma_i\alpha_i, ~i=0,1,2,\cdots L-1 $$
+The CORDIC core computes trigonometric functions by rotating a vector iteratively by breaking down the angle of rotation into a set of small pre-defined angles. If a two-dimensional vector $v_0=[x_0,y_0]$ is rotated by an angle $\theta$ then it results a vector $v_L=[x_L,y_L]$. The rotation angle $\theta$ is expressed as a series of $L$ micro-rotation angles $\alpha_i = \arctan(2^{-i})$ as shown below.
+
+
+$$\theta = \sum_{i=0}^{L-1}\sigma_i\alpha_i, ~i=0,1,2,\cdots L-1$$
 	
-where, $ \sigma_i=\pm1 $ controls the direction of the micro-rotation. In each iteration, the vector is rotated with elementary angle $ \alpha_i $ as follows, 
-$$ 
-	x_{i+1} = x_i-\sigma_i2^{-i}y_i\\
+where, $\sigma_i=\pm1$ controls the direction of the micro-rotation. In each iteration, the vector is rotated with elementary angle $\alpha_i$ as follows, 
+$$x_{i+1} = x_i-\sigma_i2^{-i}y_i\\
 	y_{i+1} = y_i+\sigma_i2^{-i}x_i\\
-	z_{i+1} = z_i-\sigma_i\alpha_i
-$$
-where $ z_i $ corresponds to the rotation angle in $ i^{th} $ iteration and $ z_0 $ is the initial angle. In, rotation mode, $ \sigma_i = \text{sign}(z_i)$. The basic architecture for the implementation of CORDIC core can be found in the references given at the end of this documentation.
+	z_{i+1} = z_i-\sigma_i\alpha_i$$
+
+where $z_i$ corresponds to the rotation angle in $i^{th}$ iteration and $z_0$ is the initial angle. In, rotation mode, $\sigma_i = \text{sign}(z_i)$. The basic architecture for the implementation of CORDIC core can be found in the references given at the end of this documentation.
 
 Note that, the CORDIC core performs rotation only in Quadrant 1 and 4 (Q1 & Q4) i.e., $\theta \in [-pi/4 , pi/4]$. If input angle lies in Q2 or Q3 then it should be mapped into either Q1/Q4 and post-process the CORDIC output as follows,
 
-$$
-cos(\theta) =
+$$cos(\theta) =
 \begin{cases}
   \text{cos\_output}_{CORDIC} & \theta \in Q1 \\
   -\text{sin\_output}_{CORDIC} & \theta \in Q2 \\
   -\text{cos\_output}_{CORDIC} & \theta \in Q3 \\
   \text{sin\_output}_{CORDIC} & \theta \in Q4
-\end{cases}
-$$
+\end{cases}$$
 
 Similarly for the $sin(\theta)$ also.
 

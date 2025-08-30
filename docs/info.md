@@ -6,6 +6,14 @@ sections.
 You can also include images in this folder and reference them in the markdown. Each image must be less than
 512 kb in size, and the combined size of all images must be less than 1 MB.
 -->
+## Credits
+The development of this ROM-Less CORDIC engine was made possible by the engineering team at [Vicharak](https://vicharak.in/), who contributed subject matter expertise in math and RTL synthesis. Their Vaaman development platform served as an effective test harness for validating RTL designs and verifying algorithms.
+
+[Akshar Vastarpara](https://github.com/akshar001),
+[Kasetty Praveen Kumar](https://github.com/Kasetty-Praveen-Kumar),
+[Deepak Sharda](https://github.com/dpks2003),
+[Rishik Ram Jallarapu](https://github.com/Marcvi19),
+[Devang Kabutarwala](https://github.com/djkabutar)
 
 ## How it works
 Cordic-16 is a ROM Less cordic implementation with 16 bit signed fixed point input-Q3.16  (1 sign bit 3 integer bits and 12 fraction bits). This core comprises of (i) a single stage CORDIC Engine that operates in rotation mode for computing $cos$ and $sin$ of input angle $\theta$, and (ii) an $arctan$ generator that generates the micro-rotation angles dynamically in each clock cycle for the corresponding iteration.
@@ -54,7 +62,7 @@ As said, micro-rotation angles were genearted using Taylor's series approximatio
 
 ## How to test
 
-The cordic is interfaced using SPI and one byte is transferred at a time, the core expects 8 bytes (64 bit input) as {in_atan_0,in_aplha,in_x,in_y} where in, each of the input has data width of 16-bit. After Receiving these inputs, the engine generates the output as {out_alpha, out_costheta, out_sintheta} wherein each of them is 16 bit. Thus we receive total of 6 bytesfrom SPI.
+The cordic is interfaced using SPI and one byte is transferred at a time, the core expects 8 bytes (64 bit input) as {in_atan_0,in_aplha,in_x,in_y} where in, each of the input has data width of 16-bit. After Receiving these inputs, the engine generates the output as {out_alpha, out_costheta, out_sintheta} wherein each of them is 16 bit. Thus we receive total of 6 bytes from SPI.
 
 Here 
 

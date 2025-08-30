@@ -9,11 +9,12 @@ You can also include images in this folder and reference them in the markdown. E
 ## Credits
 The development of this ROM-Less CORDIC engine was made possible by the engineering team at [Vicharak](https://vicharak.in/), who contributed subject matter expertise in math and RTL synthesis. Their Vaaman development platform served as an effective test harness for validating RTL designs and verifying algorithms.
 
-[Akshar Vastarpara](https://github.com/akshar001),
+[Devang Kabutarwala](https://github.com/djkabutar),
 [Kasetty Praveen Kumar](https://github.com/Kasetty-Praveen-Kumar),
-[Deepak Sharda](https://github.com/dpks2003),
 [Rishik Ram Jallarapu](https://github.com/Marcvi19),
-[Devang Kabutarwala](https://github.com/djkabutar)
+[Deepak Sharda](https://github.com/dpks2003),
+[Tejas Dabhankar](https://github.com/tejdabhankar),
+[Akshar Vastarpara](https://github.com/akshar001)
 
 ## How it works
 Cordic-16 is a ROM Less cordic implementation with 16 bit signed fixed point input-Q3.16  (1 sign bit 3 integer bits and 12 fraction bits). This core comprises of (i) a single stage CORDIC Engine that operates in rotation mode for computing $cos$ and $sin$ of input angle $\theta$, and (ii) an $arctan$ generator that generates the micro-rotation angles dynamically in each clock cycle for the corresponding iteration.

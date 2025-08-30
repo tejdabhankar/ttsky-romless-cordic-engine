@@ -1,6 +1,6 @@
 # Tiny Tapeout project information
 project:
-  title:        "Pipelined ROM-less Cordic Engine"      # Project title
+  title:        "ROM-less Cordic Engine"      # Project title
   author:       "Rohan Sundar, Rohan Verma and Jyotinder Singh"      # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "A ROM-less cordic engine that utilizes SPI-slave interface to receive four 16-bit inputs (atan₀, alpha, x, y) and returns three 16-bit outputs (alpha, cosθ, sinθ)."      # One line description of what your project does
@@ -39,7 +39,7 @@ pinout:
 
   # Outputs
   uo[0]: "uo_out[0]"
-  uo[1]: ""
+  uo[1]: "uo_out[1]"
   uo[2]: ""
   uo[3]: ""
   uo[4]: ""

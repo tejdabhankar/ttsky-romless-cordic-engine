@@ -46,7 +46,7 @@ Connect the Raspberry Pi Pico to the ULX3S as follows:
 ## Usage Instructions
 
 1. **Wiring:** Connect ULX3S pins 22-25 to Pico as described.
-2. **Load MicroPython code:** Copy the regression test script to the Raspberry Pi Pico filesystem.
+2. **Load MicroPython code:** Copy the regression test script to the Raspberry Pi Pico's micropython filesystem.
 3. **Run the test:** Run the script via serial REPL or in an IDE like Thonny.
 4. **View results:** The test prints detailed results, including any failed angle cases, maximum and mean error values.
 5. **Save logs:** Optionally, the test results can be saved as JSON on the Pico and transferred to the host for further analysis(use mpremote or Thonny). 
